@@ -61,7 +61,19 @@
             };
             analytics._writeKey = "WpIWG6fXcPb9S2CqxCiXgkjAanlWVOXf";
             analytics.SNIPPET_VERSION = "4.15.3";
-            analytics.load("WpIWG6fXcPb9S2CqxCiXgkjAanlWVOXf");
+            analytics.load("WpIWG6fXcPb9S2CqxCiXgkjAanlWVOXf", {
+              integrations: {
+                "Segment.io": {
+                  deliveryStrategy: {
+                    strategy: "batching",
+                    config: {
+                      size: 10,
+                      timeout: 5000,
+                    },
+                  },
+                },
+              },
+            });
             analytics.page();
           }
       })();
