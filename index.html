@@ -88,7 +88,7 @@
       the best sneakers as soon as they drop.
     </p>
     <!--Location for users to enter their information to receive the sneakerhead newsletter-->
-    <form name="sneakersignup" onsubmit="identify(event)">
+    <form name="sneakersignup" onsubmit="return identify(event)">
       <br />
       <br />
       Name: <input name="fullname" required="" size="60" type="text" /> <br />
@@ -125,9 +125,7 @@
           shoeType: shoeType,
         });
         //  Sign-up Track call
-        analytics.track("user signed up", user, function () {
-          window.location.href = "";
-        });
+        analytics.track("user signed up", user);
         // Ecommerce Events
         analytics.track('Products Searched', {
          query: 'kith air force 1'
@@ -213,6 +211,8 @@
             }
           ]
         });
+
+        return false;
       }
     </script>
   </body>
