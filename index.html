@@ -125,7 +125,7 @@
           shoeType: shoeType,
         });
         //  Sign-up Track call
-        analytics.track("user signed up", user);
+        analytics.track("User Signed Up", user);
         // Ecommerce Events
         analytics.track('Products Searched', {
          query: 'kith air force 1'
@@ -210,6 +210,8 @@
               image_url: 'https:///www.example.com/product/path.jpg'
             }
           ]
+        }, function() {
+              window.location.href = "";
         });
 
         // return false;
